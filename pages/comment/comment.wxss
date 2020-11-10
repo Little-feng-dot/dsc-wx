@@ -1,0 +1,132 @@
+@import '/iconfont/iconfont.wxss';
+
+.title {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title view {
+  width: 20%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.title .comment {
+  color: #f00;
+  border-bottom: 2px solid #f00;
+}
+
+.comment-tab {
+  width: 100%;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.comment-tab .comment-item {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90rpx;
+}
+
+.comment-tab .comment-item.active {
+  color: #f00;
+  border-bottom: 1px solid #f00;
+  box-sizing: border-box;
+}
+
+.comment-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10rpx;
+}
+
+.comment-content .userInfo {
+  width: 96%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.comment-content .userInfo .userImg {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+
+.comment-content .userInfo .userName {
+  margin-left: 20rpx;
+}
+
+.comment-content .userInfo .time {
+  flex: 2;
+  text-align: right;
+}
+
+.comment-content .lev {
+  width: 100%;
+  height: 30rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.comment-content .lev view {
+  color: #f00;
+  margin-left: 10rpx;
+  font-size: 24rpx;
+}
+
+.comment-content .comment-text {
+  font-size: 32rpx;
+  width: 96%;
+  color: #666;
+}
+
+.comment-content .comment-images {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.comment-content .comment-images .comment-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 10rpx;
+}
+
+.noData {
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.noData image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+
+.noData .noData-text {
+  text-align: center;
+  color: #999;
+  margin-top: 10rpx;
+}

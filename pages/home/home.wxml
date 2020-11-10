@@ -1,0 +1,126 @@
+<view class="header">
+	<view class="header-bg">
+		<view class="header-bg-top" style="background:{{swiperList[currentIndex].bgColor}}"></view>
+	</view>
+	<view class="search">
+		<form>
+			<input placeholder="输入搜索关键词" />
+			<text class="iconfont icon-sousuo"></text>
+		</form>
+		<text class="iconfont icon-xiaoxi-"></text>
+	</view>
+	<view class="tab">
+		<scroll-view class="tab-ul" scroll-x="true" scroll-left="{{oLeft}}" scroll-with-animation="true">
+			<view wx:for="{{tablist}}" wx:key='index' class="{{index==tabIndex?'active':''}}" bindtap="changeTabClick" data-index="{{index}}" data-cid="item.cat_id">
+				{{item.cat_name}}
+			</view>
+		</scroll-view>
+		<view class="creatory" bindtap="toCategroy">
+			<text class="iconfont icon-fenlei"></text>
+			<view>分类</view>
+		</view>
+	</view>
+</view>
+<swiper class="swiper" bindchange='changeTab' current="{{tabIndex}}" style="height:{{swiperH}}rpx">
+	<!-- 首页轮播图 -->
+	<swiper-item>
+		<view class="header-bg-bottom" style="background:{{swiperList[currentIndex].bgColor}}"></view>
+		<swiper class="swiper-inner" autoplay indicator-dots circular bindchange='changeSwiper'>
+			<swiper-item class="swiper-item" wx:for='{{swiperList}}' wx:key="index">
+				<image src="{{item.img}}" />
+			</swiper-item>
+		</swiper>
+		<view class="quickNav">
+			<swiper indicator-dots>
+				<swiper-item wx:for="{{quickNavList}}" wx:key="index">
+					<view class="item-warp">
+						<view class="quick-item" wx:for="{{item}}" wx:key="index" wx:for-item="listItem" bindtap="togoodslist" data-cid="{{listItem.appletPage}}">
+							<image src="{{listItem.img}}"></image>
+							<view class="title">{{listItem.desc}}</view>
+						</view>
+					</view>
+				</swiper-item>
+			</swiper>
+			<view class="news">
+				<image src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978466633.png" />
+				<swiper indicator-dots="" autoplay="true" current="0" interval="5000" duration="1000" circular="false" vertical="true">
+					<swiper-item class="" item-id="" wx:for="{{newList}}" wx:key="index">
+						<text>{{item.title}}</text>
+					</swiper-item>
+				</swiper>
+			</view>
+		</view>
+		<image class="img" src="https://x.dscmall.cn/storage/data/gallery_album/original_img/CPvH5WHHbF0EoG9XjRQbbT3knMVCeEt9DlYGQhJM.png?imageView2/2/format/webp" />
+		<view class="seckill">
+			<view class="seckill-header">
+				<image class="seckill-img" src="https://x.dscmall.cn/storage/data/gallery_album/177/original_img/177_P_1597978468241.png?imageView2/2/format/webp" lazy-load="false" binderror="" bindload="" />
+				<view>
+					距结束还剩:<text class="text">
+						  <text>{{resultTime.hour}}</text>:<text>{{resultTime.min}}</text>:<text>{{resultTime.sec}}</text>
+					</text>
+				</view>
+			</view>
+			<view class="seckill-tab">
+				<view class="tab-item {{index==tabIndex2?'active':''}}" wx:for="{{timeList}}" wx:key="index" bindtap="clickTab" data-tabIndex2="{{index}}">
+					<view class="startTime">
+						{{item.title}}
+					</view>
+					<view class="status">
+						{{item.status?'抢购中':'即将开始'}}
+					</view>
+				</view>
+			</view>
+			<view class="con-item">
+				<scroll-view scroll-x="true">
+					<view class="abc">
+						<view class="content" wx:for="{{seckill_list}}" wx:key="index">
+							<image src="{{item.goods_thumb}}"></image>
+							<image class="secImg" src="https://x.dscmall.cn/static/dist/img/seckill-tag.png"></image>
+							<view class="title">{{item.goods_name}}</view>
+							<view class="sec_price">{{item.sec_price}}</view>
+							<view class="market_price">{{item.market_price}}</view>
+						</view>
+					</view>
+				</scroll-view>
+			</view>
+			<view class="getMore">查看更多秒杀商品></view>
+		</view>
+		<view class="goods">
+			<view class="goods-Tab">
+				<view class="tab-item {{index==goodsTabListIndex?'active':''}}" wx:for="{{goodsTabList}}" wx:key="index" bindtap="goodsTabClick" data-goodsIndex="{{index}}"> 
+					<view class="title">{{item.title}}</view>
+					<view class="describe">{{item.describe}}</view>
+				</view>
+			</view>
+			<view class="goods-con">
+				<view class="con-item" wx:for="{{goodsList}}" wx:key="index" bindtap="toGoodsDetail" data-gid="{{item.goods_id}}">
+					<image wx:if="{{loadingImg}}" src="{{loadImgSrc}}"></image>
+					<image wx:else src="{{item.goods_img}}"></image>
+					<view class="title">{{item.title}}</view>
+					<view class="price">{{item.shop_price}}</view>
+				</view>
+			</view>
+		</view>
+	</swiper-item>
+	<swiper-item>
+		<homeMore wx:if="{{tabIndex==1}}" indexMore="{{indexMore}}" />
+	</swiper-item>
+	<swiper-item>
+		<homeMore wx:if="{{tabIndex==2}}" indexMore="{{indexMore}}" />
+	</swiper-item>
+	<swiper-item>
+		<homeMore wx:if="{{tabIndex==3}}" indexMore="{{indexMore}}" />
+	</swiper-item>
+	<swiper-item>
+		<homeMore wx:if="{{tabIndex==4}}" indexMore="{{indexMore}}" />
+	</swiper-item>
+	<swiper-item>
+		<homeMore wx:if="{{tabIndex==5}}" indexMore="{{indexMore}}" />
+	</swiper-item>
+	<swiper-item>
+		<homeMore wx:if="{{tabIndex==6}}" indexMore="{{indexMore}}" />
+	</swiper-item>
+	<swiper-item>
+		<homeMore wx:if="{{tabIndex==7}}" indexMore="{{indexMore}}" />
+	</swiper-item>
+</swiper>

@@ -1,0 +1,1 @@
+<view style="width:{{brStyle.width}};height:{{brStyle.height}};background:{{brStyle.background}}"></view>

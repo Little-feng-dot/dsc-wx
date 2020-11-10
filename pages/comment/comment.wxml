@@ -1,0 +1,54 @@
+<view class="title">
+	<view bindtap="back">商品</view>
+	<view bindtap="back">详情</view>
+	<view class="comment">评论</view>
+</view>
+<br brStyle="{{brStyle}}" />
+<view class="comment-tab">
+	<view class="comment-item {{active==0?'active':''}}" bindtap="changeActive" data-rank="all" data-index="0">
+		<view class="title">全部评价</view>
+		<view>{{commentTitle.all}}</view>
+	</view>
+	<view class="comment-item {{active==1?'active':''}}" bindtap="changeActive" data-rank="good" data-index="1">
+		<view class="title">好评</view>
+		<view>{{commentTitle.good}}</view>
+	</view>
+	<view class="comment-item {{active==2?'active':''}}" bindtap="changeActive" data-rank="in" data-index="2">
+		<view class="title">中评</view>
+		<view>{{commentTitle.in}}</view>
+	</view>
+	<view class="comment-item {{active==3?'active':''}}" bindtap="changeActive" data-rank="rotten" data-index="3">
+		<view class="title">差评</view>
+		<view>{{commentTitle.rotten}}</view>
+	</view>
+	<view class="comment-item {{active==4?'active':''}}" bindtap="changeActive" data-rank="img" data-index="4">
+		<view class="title">有图</view>
+		<view>{{commentTitle.img}}</view>
+	</view>
+</view>
+<view wx:if="{{!noData}}">
+	<view class="comment-content" wx:for="{{commentData}}" wx:key="index">
+		<view class=" userInfo">
+			<image src="{{item.user_picture}}" class="userImg"></image>
+			<view class="userName">{{item.user_name}}</view>
+			<view class="time">{{item.add_time}}</view>
+		</view>
+		<view class="lev">
+			<block wx:for="{{item.rankArr}}" wx:key="index">
+				<view class="iconfont icon-wuxing"></view>
+			</block>
+		</view>
+		<view class="comment-text">
+			{{item.content}}
+		</view>
+		<view class="comment-images">
+			<block wx:for="{{item.comment_img}}" wx:for-item="imgItem" wx:key="index">
+				<image src="{{imgItem}}" class="comment-img"></image>
+			</block>
+		</view>
+	</view>
+</view>
+<view class="noData" wx:else>
+	<image src="https://bpic.588ku.com/element_origin_min_pic/20/09/27/c6f8a5d7e40a08c03b357419cff90570.jpg"></image>
+	<view class="noData-text">亲,还没有相关数据哦!</view>
+</view>

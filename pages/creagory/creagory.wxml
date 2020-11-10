@@ -1,0 +1,31 @@
+<view class="header">
+	<view class="input">
+		<view class="iconfont icon-sousuo searchIcon"></view>
+		<view>输入搜索关键字</view>
+	</view>
+</view>
+<view class="category-con" style="height:{{height}}px">
+	<view class="category-left">
+		<view class="category-tabItme {{tabIndex==index?'active':''}}" data-tabIndex='{{index}}' bindtap="changeTabIndex" wx:for="{{categoryData}}" wx:key="index">{{item.cat_name}}</view>
+	</view>
+	<view class="category-right">
+		<scroll-view style="height:{{height-8}}px;margin:16rpx 16rpx 0 16rpx" scroll-y="true" scroll-with-animation scroll-into-view="{{goId}}" bindscroll="scrollFn">
+			<view wx:for="{{categoryRightData}}" id="a{{index}}" wx:key="index" wx:for-item="categoryRightData">
+				<image src="{{categoryData[index].touch_catads}}" class="titleImg"></image>
+				<view class="tab-con" wx:for="{{categoryRightData}}" wx:key="index" wx:for-item="categoryRightDataItem">
+					<view class="tab-con-title">
+						<view class="line"></view>
+						<view>{{categoryRightDataItem.cat_name}}</view>
+						<view class="line"></view>
+					</view>
+					<view class="tab-con-warp">
+						<view class="tab-con-item" wx:for="{{categoryRightDataItem.child}}" wx:key="index" wx:for-item="item" bindtap="toList" data-cid="{{item.cat_id}}">
+							<image src="{{item.touch_icon}}"></image>
+							<view class="title">{{item.cat_name}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+</view>

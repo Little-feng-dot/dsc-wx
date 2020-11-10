@@ -1,0 +1,475 @@
+@import '/iconfont/iconfont.wxss';
+@import "/wxParse/wxParse.wxss";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+}
+
+.navbar .navbar-item {
+  width: 25%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.navbar .navbar-item.active {
+  color: #f00;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.goods-warp {
+  width: 100%;
+}
+
+.goods-warp .goodsInfo {
+  width: 96%;
+  padding: 2%;
+}
+
+.goods-warp .goodsInfo .price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20rpx;
+}
+
+.goods-warp .goodsInfo .price .afterPrice {
+  color: #f00;
+  font-size: 40rpx;
+  margin-right: 10rpx;
+  font-weight: bolder;
+}
+
+.goods-warp .goodsInfo .price .afterPrice::before {
+  content: '￥';
+  font-size: 28rpx;
+  font-weight: bolder;
+}
+
+.goods-warp .goodsInfo .price .beforPrice {
+  color: #999;
+  font-size: 28rpx;
+  text-decoration: line-through;
+}
+
+.goods-warp .goodsInfo .price .beforPrice::before {
+  content: '￥';
+  font-size: 28rpx;
+}
+
+.goods-warp .goodsInfo .price .share {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #999;
+}
+
+.goods-warp .goodsInfo .price .share .icon-fenxiang_2 {
+  width: 40rpx;
+  font-size: 32rpx;
+}
+
+.goods-warp .goodsInfo .VIP {
+  padding: 20rpx;
+  background-color: #efefef;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.goods-warp .goodsInfo .VIP .VIP-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.goods-warp .goodsInfo .VIP .VIP-title .title-con {
+  margin-left: 10rpx;
+  color: #333;
+}
+
+.goods-warp .goodsInfo .VIP .gobuyVip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  padding: 5rpx 20rpx;
+  border-radius: 40rpx;
+  color: #E3C49E;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.goods-warp .goodsInfo .title {
+  margin-bottom: 20rpx;
+  color: #333333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 50rpx;
+}
+
+.goods-warp .goodsInfo .other {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+}
+
+.serve {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.serve .title {
+  width: 20%;
+  color: #999;
+  text-align: center;
+}
+
+.serve .text {
+  width: 70%;
+}
+
+.serve .icon-youjiantou1 {
+  width: 10%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #999;
+}
+
+.store {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 28rpx;
+}
+
+.store .storeInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.store .storeInfo image {
+  width: 104rpx;
+  height: 104rpx;
+  margin: 20rpx;
+}
+
+.store .storeInfo .storeName {
+  width: 55%;
+}
+
+.store .storeInfo .storeName .name {
+  font-weight: bolder;
+}
+
+.store .storeInfo .storeName .collectNum {
+  color: #999;
+}
+
+.store .storeInfo .intoStore {
+  width: 20%;
+  margin-right: 10rpx;
+  padding: 15rpx 10rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.store .store-evaluate {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.store .store-evaluate .evaluate-item {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.store .store-evaluate .evaluate-item .title {
+  color: #999;
+  margin-right: 20rpx;
+}
+
+.store .store-evaluate .evaluate-item .level {
+  color: #13ab53;
+  margin-right: 10rpx;
+}
+
+.store .store-evaluate .evaluate-item .icon-jiantou {
+  color: #13ab53;
+}
+
+.goodsDetail-warp {
+  width: 100%;
+}
+
+.goodsDetail-warp .goodsDetail-tab {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goodsDetail-warp .goodsDetail-tab .goodsDetail {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.goodsDetail-warp .goodsDetail-tab .goodsDetail.active {
+  color: #f00;
+  border-bottom: 2px solid #f00;
+  box-sizing: border-box;
+}
+
+.goodsDetail-warp .goodsDetail-tab .goodsDetail-params {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.goodsDetail-warp .goodsDetail-tab .goodsDetail-params.active {
+  color: #f00;
+  border-bottom: 2px solid #f00;
+  box-sizing: border-box;
+}
+
+.goodsDetail-warp .goodsDetail-params-con {
+  width: 100%;
+  display: flex;
+}
+
+.goodsDetail-warp .goodsDetail-params-con .goodsDetail-params-content {
+  padding: 20rpx;
+}
+
+.table {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.table .tbody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.table .tbody .tr {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+  border-bottom: 1px solid #ccc;
+}
+
+.table .tbody .tr .td {
+  flex: 1;
+  border-right: 1px solid #ccc;
+  padding: 20rpx 10rpx;
+  font-size: 28rpx;
+  color: #333;
+  height: 100%;
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+.goods-guess {
+  width: 100%;
+  background-color: #efefef;
+}
+
+.goods-guess .header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.goods-guess .header .line {
+  width: 30rpx;
+  height: 2px;
+  background-color: #ccc;
+  margin: 20rpx;
+}
+
+.goods-guess .goodsList {
+  width: 100%;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.goods-guess .goodsList .goodsList-item {
+  width: 48%;
+  margin: 1%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20rpx;
+  overflow: hidden;
+  color: #333333;
+  font-size: 24rpx;
+}
+
+.goods-guess .goodsList .goodsList-item image {
+  width: 350rpx;
+  height: 350rpx;
+  margin: 0 0 10rpx 0;
+}
+
+.goods-guess .goodsList .goodsList-item .title {
+  width: 90%;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+.goods-guess .goodsList .goodsList-item .price::before {
+  content: '￥';
+  font-size: 24rpx;
+}
+
+.goods-guess .goodsList .goodsList-item .price {
+  width: 90%;
+  font-size: 28rpx;
+  color: #f00;
+  text-align: center;
+  font-weight: bold;
+  margin: 10rpx 0;
+}
+
+.noMore {
+  width: 100%;
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 32rpx;
+  color: #ccc;
+}
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #efefef;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.footer .iconfont {
+  color: #333333;
+  font-size: 40rpx;
+}
+
+.footer .kefu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid #efefef;
+}
+
+.footer .collect {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid #efefef;
+}
+
+.footer .cart {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.footer .cart .cartNum {
+  min-width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  background-color: #f00;
+  color: #fff;
+  padding: 5rpx;
+  text-align: center;
+  line-height: 30rpx;
+  position: absolute;
+  top: -5rpx;
+  right: 8rpx;
+  font-size: 24rpx;
+}
+
+.footer .addCart {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background-color: #f44;
+  height: 100rpx;
+  font-size: 32rpx;
+}
+
+.footer .goPay {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background-color: #FE9315;
+  height: 100rpx;
+  font-size: 32rpx;
+}

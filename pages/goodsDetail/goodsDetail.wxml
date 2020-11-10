@@ -1,0 +1,171 @@
+<import src="/wxParse/wxParse.wxml" />
+<view class="navbar" style="opacity:{{opacity}}">
+	<view class="navbar-item {{index==activeIndex?'active':''}}" wx:for="{{navbarList}}" wx:key="index" bindtap="changeActive" data-index="{{index}}">{{item}}</view>
+</view>
+<scroll-view style="height:{{height}}px;padding-bottom:100rpx" scroll-y="true" bindscrolltolower="toBottom" enable-back-to-top="true" bindscroll="changeScroll" scroll-into-view="{{goId}}" scroll-with-animation="true">
+	<view class="goods-warp" id="a0">
+		<swiper style="width:100%;height:750rpx" autoplay="true" indicator-dots="true" circular="true">
+			<swiper-item wx:for="{{goodsInfo.gallery_list}}" wx:key="index">
+				<image src="{{item.img_url}}" style="width:100%;height:750rpx"></image>
+			</swiper-item>
+		</swiper>
+		<!-- <image src="{{goodsInfo.goods_img}}" style="width:100%;height:750rpx"></image> -->
+		<view class="goodsInfo">
+			<view class="price">
+				<view class="afterPrice">{{goodsInfo.shop_price}}</view>
+				<view class="beforPrice">{{goodsInfo.market_price}}</view>
+				<view class="share">
+					<view class="iconfont icon-fenxiang_2"></view>
+					<view>分享</view>
+				</view>
+			</view>
+			<view class="VIP">
+				<view class="VIP-title">
+					<image src="https://x.dscmall.cn/static/dist/img/icon-vip.png" style="width:40rpx;height:40rpx"></image>
+					<view class="title-con">高级VIP享超值优惠价{{goodsInfo.shop_price_formated}}</view>
+				</view>
+				<view class="gobuyVip">
+					<view>立即开通</view>
+					<view class="iconfont icon-youjiantou1"></view>
+				</view>
+			</view>
+			<view class="title">{{goodsInfo.goods_name}}</view>
+			<view class="other">
+				<view class="sales">销量 {{goodsInfo.sales_volume}}</view>
+				<view class="inventory">当前库存{{goodsInfo.goods_number}}</view>
+				<view class="address">{{goodsInfo.basic_info.city_name}} {{goodsInfo.basic_info.province_name}}</view>
+			</view>
+		</view>
+		<br brStyle="{{brStyle}}" />
+		<view class="serve">
+			<view class="title">服务</view>
+			<view class="text">正品保证 七天无理由退换 闪速配送</view>
+		</view>
+		<br brStyle="{{brStyle}}" />
+		<view class="serve">
+			<view class="title">已选:</view>
+			<view class="text">1个</view>
+			<view class="iconfont icon-youjiantou1"></view>
+		</view>
+		<br brStyle="{{brStyle}}" />
+		<view class="serve">
+			<view class="title">送至</view>
+			<view class="text">河南省 郑州市 中原区</view>
+			<view class="iconfont icon-youjiantou1"></view>
+		</view>
+		<view class="serve">
+			<view class="title">运费</view>
+			<view class="text" style="color:red">￥0.00</view>
+		</view>
+		<br brStyle="{{brStyle}}" />
+		<view class="store">
+			<view class="storeInfo">
+				<image src="{{'https://x.dscmall.cn/storage/'+goodsInfo.basic_info.logo_thumb}}"></image>
+				<view class="storeName">
+					<view class="name">{{goodsInfo.basic_info.shop_name}}</view>
+					<view class="collectNum">10人关注</view>
+				</view>
+				<view class="intoStore">进店逛逛</view>
+			</view>
+			<view class="store-evaluate">
+				<view class="evaluate-item">
+					<view class="title">商品</view>
+					<view class="level">5分</view>
+					<view class="iconfont icon-jiantou"></view>
+				</view>
+				<view class="evaluate-item">
+					<view class="title">服务</view>
+					<view class="level">5分</view>
+					<view class="iconfont icon-jiantou"></view>
+				</view>
+				<view class="evaluate-item">
+					<view class="title">时效</view>
+					<view class="level">5分</view>
+					<view class="iconfont icon-jiantou"></view>
+				</view>
+			</view>
+		</view>
+		<br brStyle="{{brStyle}}" />
+	</view>
+	<view class="goodsDetail-warp" id="a1">
+		<view class="goodsDetail-tab">
+			<view class="goodsDetail  {{detailFlag=='true'?'active':''}}" bindtap="changeDetailTab" data-flag="true">商品详情</view>
+			<view class="goodsDetail-params  {{detailFlag=='false'?'active':''}}" bindtap="changeDetailTab" data-flag="false">规格参数</view>
+		</view>
+		<view class="goodsDetail-con" wx:if="{{detailFlag=='true'}}">
+			<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+		</view>
+		<view class="goodsDetail-params-con" wx:else>
+			<view class="goodsDetail-params-content">
+				<view class="table">
+					<view class="tbody">
+						<view class="tr">
+							<view class="td">商品编号</view>
+							<view class="td">{{goodsInfo.zq_Id}}</view>
+						</view>
+						<view class="tr">
+							<view class="td">主体</view>
+						</view>
+					</view>
+					<view class="tbody">
+						<view class="tr">
+							<view class="td">品牌:</view>
+							<view class="td"></view>
+						</view>
+						<view class="tr">
+							<view class="td">商品重量:</view>
+							<view class="td">{{goodsInfo.goods_weight}}kg</view>
+						</view>
+					</view>
+					<view class="tbody">
+						<view class="tr">
+							<view class="td">产品规格</view>
+						</view>
+						<view class="tr" wx:for="{{goodsInfo.attr_parameter}}" wx:key="index">
+							<view class="td">{{item.attr_name}}</view>
+							<view class="td">{{item.attr_value}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="goods-guess" id="a2">
+		<view class="header">
+			<view class="line"></view>
+			<view class="title">猜你喜欢</view>
+			<view class="line"></view>
+		</view>
+		<view class="goodsList">
+			<view class="goodsList-item" wx:for="{{goodsGuessData}}" wx:key="index" bindtap="toGoodsDetail" data-gid="{{item.goods_id}}">
+				<image src="{{item.goods_thumb}}"></image>
+				<view class="title">{{item.goods_name}}</view>
+				<view class="price">{{item.shop_price}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="noMore" wx:if="{{noMore}}">我也是有底线的~</view>
+</scroll-view>
+
+
+
+
+
+<view class="footer">
+	<view class="kefu">
+		<view class="iconfont icon-xiaoxi-"></view>
+		<view>客服</view>
+	</view>
+	<view class="collect">
+		<view class="iconfont icon-shoucang" wx:if="true"></view>
+		<view class="iconfont icon-shoucang1" wx:else></view>
+		<view>收藏</view>
+	</view>
+	<view class="cart">
+		<view class="iconfont icon-gouwuchekong"></view>
+		<view>购物车</view>
+		<view class="cartNum">100</view>
+	</view>
+	<view class="addCart">加入购物车</view>
+	<view class="goPay">立即购买</view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "homeMore":"/pages/component/indexMore/indexMore"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}                              

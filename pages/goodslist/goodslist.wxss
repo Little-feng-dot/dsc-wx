@@ -1,0 +1,257 @@
+@import "../../iconfont/iconfont.wxss";
+
+page {
+  background-color: #efefef;
+}
+
+.header {
+  padding:  10rpx 20rpx;
+  width: 100%;
+  width: calc(100% - 40rpx);
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.header .input {
+  width: 90%;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid #efefef;
+  border-radius: 30rpx;
+  position: relative;
+}
+
+.header .input .indent {
+  margin-left: 60rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.header .input .search {
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}
+
+.header .input .search .icon-sousuo {
+  font-size: 46rpx;
+  color: #666;
+}
+
+.header .arrange {
+  width: 10%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.header .arrange text {
+  font-size: 40rpx;
+  color: #666;
+}
+
+.filter-tab {
+  width: 100%;
+  border-top: 1px solid #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.filter-tab .item.active {
+  color: #f00;
+}
+
+.filter-tab .item {
+  text-align: center;
+  width: 20%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.goodsList {
+  width: 100%;
+  /* margin: 20rpx 0; */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.goodsList .goodsList-item {
+  width: 48%;
+  margin: 1%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20rpx;
+  overflow: hidden;
+  color: #333333;
+  font-size: 24rpx;
+}
+
+.goodsList .goodsList-item image {
+  width: 350rpx;
+  height: 350rpx;
+  margin: 0 0 10rpx 0;
+}
+
+.goodsList .goodsList-item .title {
+  width: 90%;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  margin: 0 auto;
+}
+
+.goodsList .goodsList-item .price::before {
+  content: '￥';
+  font-size: 24rpx;
+}
+
+.goodsList .goodsList-item .price {
+  width: 90%;
+  font-size: 28rpx;
+  color: #f00;
+  text-align: left;
+  font-weight: bold;
+  margin: 10rpx auto;
+}
+
+.goodsList .goodsList-item .andMore {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 20rpx;
+}
+
+.goodsList .goodsList-item .andMore .shopName {
+  background-color: #FEF0F0;
+  color: #f92028;
+  padding: 4rpx;
+}
+
+.goodsList .goodsList-item .andMore .paiedNum {
+  width: 50%;
+  color: #999999;
+}
+
+.goodsList .goodsList-item .andMore .addCart {
+  width: 20%;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #f92028;
+}
+
+.goodsList-item-H {
+  margin: 0 10rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+
+.goodsList-item-H image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 10rpx;
+}
+
+.goodsList-item-H .warp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 2;
+  margin: 15rpx 30rpx;
+  font-size: 28rpx;
+}
+
+.goodsList-item-H .title {
+  width: 100%;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 28rpx;
+}
+
+.goodsList-item-H .price::before {
+  content: '￥';
+  font-size: 24rpx;
+}
+
+.goodsList-item-H .price {
+  width: 100%;
+  font-size: 28rpx;
+  color: #f00;
+  text-align: left;
+  font-weight: bold;
+  margin: 10rpx 0;
+}
+
+
+.goodsList-item-H .andMore {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 10rpx 0;
+}
+
+.goodsList-item-H .andMore .shopName {
+  background-color: #FEF0F0;
+  color: #f92028;
+  padding: 4rpx;
+}
+
+.goodsList-item-H .andMore .paiedNum {
+  width: 50%;
+  color: #999999;
+}
+
+.goodsList-item-H .andMore .addCart {
+  width: 20%;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #f92028;
+  text-align: center;
+}
+
+
+.noMore {
+  text-align: center;
+  font-size: 32rpx;
+  color: #999999;
+  margin-bottom: 20rpx;
+}
+
+.goTop {
+  position: fixed;
+  top: 80%;
+  right: 3%;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 999;
+  border-radius: 50%;
+  background-color: #ccc;
+  line-height: 60rpx;
+  text-align: center;
+  opacity: .7;
+  /* transition: all 0.5s; */
+}
+
+.goTop .icon-shishangjiantou- {
+  font-size: 60rpx;
+  color: #333333;
+}

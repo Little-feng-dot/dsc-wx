@@ -1,0 +1,32 @@
+<scroll-view scroll-y="true" style="height:{{scrollH*2}}rpx" bindscrolltolower="toBottom">
+	<view class="indexMore" hidden="{{!isShow}}">
+		<view class="category">
+			<view class="category-item" wx:for="{{indexMore.category}}" wx:key="index">
+				<image src="{{item.touch_icon}}"></image>
+				<view class="title">{{item.cat_name}}</view>
+			</view>
+		</view>
+		<view class="brand">
+			<view class="title">品牌精选</view>
+			<view class="brand-warp">
+				<view class="brand-item" wx:for="{{indexMore.brand}}" wx:key="index">
+					<image src="{{item.brand_logo}}"></image>
+					<view class="brand-title">{{item.brand_name}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="goodsList">
+			<view class="goodsList-item" wx:for="{{indexMoreListData}}" wx:key="index" bindtap="toGoodsDetail" data-gid="{{item.goods_id}}">
+				<image src="{{item.goods_thumb}}"></image>
+				<view class="title">{{item.name}}</view>
+				<view class="price">{{item.shop_price}}</view>
+				<view class="andMore">
+					<view class="shopName">{{item.rz_shopName=='商创自营'?'自营':'进店'}}</view>
+					<view class="paiedNum">{{item.sale}}已购买</view>
+					<view class="addCart"><text class="iconfont icon-gouwuchekong"></text></view>
+				</view>
+			</view>
+		</view>
+		<view class="noMore" wx:if="{{noMore}}">我也是有底线的~</view>
+	</view>
+</scroll-view>

@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/comment/comment",
+    "pages/goodsDetail/goodsDetail",
+    "pages/creagory/creagory",
+    "pages/goodslist/goodslist",
+    "pages/discover/discover",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "大商创",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#f00",
+    "backgroundColor": "#ffffff",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/首页.png",
+        "selectedIconPath": "images/首页 (1).png"
+      },
+      {
+        "pagePath": "pages/creagory/creagory",
+        "text": "分类",
+        "iconPath": "images/分类.png",
+        "selectedIconPath": "images/分类 (1).png"
+      }, {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/发现.png",
+        "selectedIconPath": "images/发现 (1).png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/购物车空.png",
+        "selectedIconPath": "images/购物车满 (1).png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/我的.png",
+        "selectedIconPath": "images/我 的 (1).png"
+      }
+    ]
+  }
+}

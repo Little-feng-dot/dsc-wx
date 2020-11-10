@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "br": "/pages/component/br/br"
+  },
+  "navigationBarTitleText": "商品评论",
+  "navigationBarBackgroundColor": "#efefef"
+}

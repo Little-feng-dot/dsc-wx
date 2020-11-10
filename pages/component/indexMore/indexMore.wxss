@@ -1,0 +1,133 @@
+@import "/iconfont/iconfont.wxss";
+.indexMore{
+  width: 94%;
+  margin: 3%;
+}
+.indexMore .category{
+  width: 94%;
+  padding: 3%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content:start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.indexMore .category .category-item{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 20rpx 0;
+}
+.indexMore .category .category-item image{
+  width: 80%;
+  height: 120rpx;
+}
+.indexMore .category .category-item .title{
+  font-size: 24rpx;
+}
+.indexMore .brand{
+  width: 94%;
+  padding: 3%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin:20rpx 0;
+}
+.indexMore .brand .title{
+  margin:20rpx;
+}
+.indexMore .brand .brand-warp{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+}
+.indexMore .brand .brand-warp .brand-item{
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin:10rpx 0;
+}
+.indexMore .brand .brand-warp .brand-item image{
+  width: 140rpx;
+  height: 60rpx;
+}
+.indexMore .goodsList{
+  width: 100%;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.indexMore .goodsList .goodsList-item{
+  width: 48%;
+  margin: 1%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20rpx;
+  overflow: hidden;
+  color: #333333;
+  font-size: 24rpx;
+}
+.indexMore .goodsList .goodsList-item image{
+  width: 350rpx;
+  height: 350rpx;
+  margin:0 0 10rpx 0;
+}
+.indexMore .goodsList .goodsList-item .title{
+  width: 90%;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+.indexMore .goodsList .goodsList-item  .price::before{
+  content: '￥';
+  font-size: 24rpx;
+}
+.indexMore .goodsList .goodsList-item  .price{
+  width: 90%;
+  font-size: 28rpx;
+  color: #f00;
+  text-align: left;
+  font-weight: bold;
+  margin: 10rpx 0;
+}
+.indexMore .goodsList .goodsList-item .andMore{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 0 20rpx 0;
+}
+.indexMore .goodsList .goodsList-item .andMore .shopName{
+  background-color: #FEF0F0;
+  color: #f92028;
+  padding: 4rpx;
+}
+.indexMore .goodsList .goodsList-item .andMore .paiedNum{
+  width: 50%;
+  color: #999999;
+}
+.indexMore .goodsList .goodsList-item .andMore .addCart{
+  width: 20%;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #f92028;
+}
+.indexMore .noMore{
+  text-align: center;
+  font-size: 32rpx;
+  color: #999999;
+}

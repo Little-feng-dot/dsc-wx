@@ -1,0 +1,110 @@
+@import "../../iconfont/iconfont.wxss";
+
+.header {
+  width: 96%;
+  padding: 2%;
+  height: 60rpx;
+  border-bottom: 1px solid #efefef;
+}
+
+.header .input {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #efefef;
+  color: #666;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.header .input .searchIcon {
+  width: 90rpx;
+  font-size: 46rpx;
+  text-align: center;
+}
+
+.category-con {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.category-con .category-left {
+  width: 25%;
+  border-right: 1px solid #efefef;
+}
+
+.category-con .category-left .category-tabItme {
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.category-con .category-left .category-tabItme.active {
+  border-left: 6rpx solid #f00;
+  color: #f00;
+  background-color: #fff;
+}
+
+.category-con .category-right {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+.category-con .category-right .titleImg {
+  width: 100%;
+  height: 190rpx;
+}
+
+.category-con .category-right .tab-con {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category-con .category-right .tab-con .tab-con-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10rpx 0;
+}
+
+.category-con .category-right .tab-con .tab-con-title .line {
+  height: 4rpx;
+  width: 30rpx;
+  background-color: #f1f1f1;
+  margin: 10rpx;
+  font-size: 24rpx;
+}
+
+.category-con .category-right .tab-con .tab-con-warp {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category-con .category-right .tab-con .tab-con-warp .tab-con-item {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 28rpx;
+  margin: 10rpx 0;
+}
+.category-con .category-right .tab-con .tab-con-warp .tab-con-item .title{
+  margin: 10rpx 0;
+}
+
+.category-con .category-right .tab-con .tab-con-warp .tab-con-item image {
+  width: 104rpx;
+  height: 104rpx;
+}

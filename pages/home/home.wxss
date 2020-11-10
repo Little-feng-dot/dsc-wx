@@ -1,0 +1,456 @@
+@import "../../iconfont/iconfont.wxss";
+
+page {
+    background-color: #f1f1f1;
+}
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.header-bg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.header-bg-top {
+    height: 150rpx;
+    background-color: #f00;
+}
+
+.header-bg-bottom {
+    position: absolute;
+    top: 0rpx;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100rpx;
+    background-color: #f00;
+    border-bottom-left-radius: 50rpx;
+    border-bottom-right-radius: 50rpx;
+}
+
+.search {
+    height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search form {
+    position: relative;
+}
+
+.search form .icon-sousuo {
+    color: #ccc;
+    font-size: 40rpx;
+    position: absolute;
+    top: 50%;
+    right: 30rpx;
+    transform: translateY(-50%);
+}
+
+.search form input {
+    height: 60rpx;
+    border-radius: 40rpx;
+    background-color: #fff;
+    padding-left: 50rpx;
+    width: 600rpx;
+    margin-left: 20rpx;
+}
+
+.search .icon-xiaoxi- {
+    display: block;
+    margin-right: 20rpx;
+    font-size: 50rpx;
+    color: #fff;
+}
+
+.tab {
+    width: 96%;
+    margin: 0 2%;
+    height: 70rpx;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #fff;
+}
+
+.tab .tab-ul {
+    width: 80%;
+    height: 70rpx;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.tab .tab-ul view:first-child {
+    width: 60rpx;
+}
+
+.tab .tab-ul .active {
+    border-bottom: 4rpx solid #fff;
+}
+
+.tab .tab-ul view {
+    display: inline-block;
+    width: 120rpx;
+    height: 60rpx;
+    margin-right: 30rpx;
+    line-height: 65rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.tab .creatory {
+    width: 20%;
+    height: 60rpx;
+    line-height: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -4px 0 4px -4px rgb(0, 0, 0, .4);
+}
+
+.tab .creatory .icon-fenlei {
+    font-size: 40rpx;
+}
+
+.swiper {
+    height: auto;
+    margin-top: 150rpx;
+}
+
+.swiper .swiper-inner {
+    width: 94%;
+    margin: 0 3%;
+    border-radius: 20rpx;
+    height: 240rpx;
+}
+
+.swiper .swiper-inner .swiper-item {
+    border-radius: 20rpx;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper .swiper-inner image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+}
+
+.swiper .quickNav {
+    width: 94%;
+    margin: 20rpx 3%;
+    background-color: #fff;
+    border-radius: 20rpx;
+    height: 550rpx;
+}
+
+.swiper .quickNav swiper {
+    height: 450rpx;
+}
+
+.swiper .quickNav image {
+    width: 100%;
+    height: 150rpx;
+}
+
+.swiper .quickNav .item-warp {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+}
+
+.swiper .quickNav .quick-item {
+    width: 20%;
+}
+
+.swiper .quickNav .title {
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.swiper .quickNav .news {
+    width: 90%;
+    height: 80rpx;
+    margin: 10rpx auto 0;
+    border-top: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper .quickNav .news image {
+    width: 140rpx;
+    height: 60rpx;
+}
+
+.swiper .quickNav .news swiper {
+    width: 70%;
+    height: 80rpx;
+}
+
+.swiper .quickNav .news swiper swiper-item {
+    line-height: 80rpx;
+}
+
+.swiper .quickNav .news swiper swiper-item text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.swiper .img {
+    width: 94%;
+    height: 350rpx;
+    margin: 10rpx 3%;
+}
+
+.swiper .seckill {
+    width: 90%;
+    margin: 20rpx 3%;
+    padding: 2%;
+    background-color: #fff;
+    border-radius: 20rpx;
+}
+
+.swiper .seckill .seckill-header {
+    margin: 20rpx 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper .seckill .seckill-header .text {
+    color: #f00;
+}
+
+.swiper .seckill .seckill-header .text text {
+    color: #fff;
+    background-color: #f00;
+    margin: 0 10rpx;
+    padding: 5rpx 10rpx;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+}
+
+.swiper .seckill .seckill-header .seckill-img {
+    width: 200rpx;
+    height: 40rpx;
+}
+
+.swiper .seckill .seckill-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper .seckill .seckill-tab .tab-item {
+    width: 25%;
+    text-align: center;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.swiper .seckill .seckill-tab .tab-item.active {
+    border-bottom: 2px solid #f00;
+    color: #f00;
+    transform: scale(1.1);
+    padding: 16rpx 0;
+}
+
+.swiper .seckill .seckill-tab .tab-item.active .startTime {
+    color: #f00;
+}
+
+.swiper .seckill .seckill-tab .tab-item.active .status {
+    color: #f00;
+}
+
+.swiper .seckill .seckill-tab .tab-item .startTime {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.swiper .seckill .seckill-tab .tab-item .status {
+    font-size: 28rpx;
+    color: #ccc;
+}
+
+.swiper .seckill .con-item {
+    width: 96%;
+    height: 300rpx;
+    /* overflow-x: hidden; */
+    margin: 30rpx 2%;
+}
+
+.swiper .seckill .con-item scroll-view {
+    width: 100%;
+    height: 350rpx;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.abc {
+    white-space: nowrap;
+    height: 350rpx;
+}
+
+.swiper .seckill .con-item scroll-view .content {
+    width: 200rpx;
+    height: 350rpx;
+    display: inline-block;
+    text-align: center;
+    margin-right: 20rpx;
+    position: relative;
+    font-size: 24rpx;
+}
+
+.swiper .seckill .con-item scroll-view .content view {
+    margin-top: 10rpx;
+}
+
+.swiper .seckill .con-item .content .secImg {
+    width: 120rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.swiper .seckill .con-item .content image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.swiper .seckill .con-item .content .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.swiper .seckill .con-item .content .sec_price {
+    font-size: 32rpx;
+    color: #f00;
+    font-weight: bold;
+}
+
+.swiper .seckill .con-item .content .sec_price::before {
+    content: '￥';
+    font-size: 24rpx;
+}
+
+.swiper .seckill .con-item .content .market_price {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.swiper .seckill .con-item .content .market_price::before {
+    content: '￥';
+    font-size: 24rpx;
+}
+
+.swiper .seckill .getMore {
+    text-align: center;
+    font-weight: bolder;
+    padding: 40rpx 0;
+}
+
+.swiper .goods {
+    width: 94%;
+    margin: 20rpx 3%;
+}
+.swiper .goods .goods-Tab{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.swiper .goods .goods-Tab .tab-item:not(:nth-of-type(1)){
+    border-left: 1px solid #ccc;
+}
+.swiper .goods .goods-Tab .tab-item{
+    text-align: center;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.swiper .goods .goods-Tab .tab-item .title{
+    font-size: 32rpx;
+    color: #666;
+}
+.swiper .goods .goods-Tab .tab-item.active .title{
+    font-weight: bold;
+    color: #666;
+}
+.swiper .goods .goods-Tab .tab-item .describe{
+    width: 70%;
+    padding: 10rpx 0;
+    font-size: 24rpx;
+    border-radius: 20rpx;
+    margin: 10rpx 0;
+    color: #999;
+}
+.swiper .goods .goods-Tab .tab-item.active .describe{
+    background-color: #f00;
+    color: #fff;
+}
+.swiper .goods .goods-con{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.swiper .goods .goods-con .con-item{
+    width: 48%;
+    border-radius: 20rpx;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10rpx 0;
+    overflow: hidden;
+}
+.swiper .goods .goods-con .con-item image{
+    width:100%;
+    height: 340rpx;
+}
+.swiper .goods .goods-con .con-item .title{
+    height: 80rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 28rpx;
+    margin: 0 20rpx;
+}
+.swiper .goods .goods-con .con-item .price::before{
+    content: '￥';
+    font-size: 24rpx;
+}
+.swiper .goods .goods-con .con-item .price{
+    color: #f00;
+    font-size: 32rpx;
+    font-weight: bold;
+    text-align: left;
+    width: 96%;
+    margin:10rpx 20rpx;
+}

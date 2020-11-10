@@ -1,0 +1,34 @@
+<view class="header">
+	<view class="input">
+		<view class="indent">输入搜索关键词</view>
+		<view class="search">
+			<text class="iconfont icon-sousuo"></text>
+		</view>
+	</view>
+	<view class="arrange" bindtap="changePL">
+		<text wx:if="{{plFlag}}" class="iconfont icon-pailie"></text>
+		<text wx:else class="iconfont icon-tubiao_liebiaopailie"></text>
+	</view>
+</view>
+<view class="filter-tab">
+	<view class="item {{activeIndex==index?'active':''}}" wx:for="{{filterTabList}}" wx:key="index" bindtap="changeActive" data-activeindex='{{index}}'>
+		{{item.title}}
+		<text wx:if="{{item.icon!=''}}" class="iconfont {{item.icon[item.iconIndex]}}"></text>
+	</view>
+</view>
+<view class="goodsList">
+	<view class="{{plFlag?'goodsList-item':'goodsList-item-H'}}" wx:for="{{goodsListData}}" wx:key="index" bindtap="toGoodsDetail" data-gid="{{item.goods_id}}">
+		<image src="{{item.goods_thumb}}"></image>
+		<view class="warp">
+			<view class="title">{{item.name}}</view>
+			<view class="price">{{item.shop_price}}</view>
+			<view class="andMore">
+				<view class="shopName">{{item.rz_shopName=='商创自营'?'自营':'进店'}}</view>
+				<view class="paiedNum">{{item.sale}}已购买</view>
+				<view class="addCart"><text class="iconfont icon-gouwuchekong"></text></view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="noMore" wx:if="{{noMore}}">我也是有底线的~</view>
+<view class="goTop"><text class="iconfont icon-shishangjiantou-" bindtap="goTop"></text></view>
