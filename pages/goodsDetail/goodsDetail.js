@@ -26,7 +26,11 @@ Page({
     goodsGuessData: [],
     page: 1,
     noMore: false,
-    goId: 'a0'
+    goId: 'a0',
+    showMask: false,
+    showCart: false,
+    cartNum: 1,
+    totalNum: 0
   },
   changeActive(e) {
     let index = e.currentTarget.dataset.index
@@ -72,10 +76,95 @@ Page({
       opacity: opacity
     })
   },
+  changeCartNum(e) {
+    let num = Number(e.currentTarget.dataset.cartnum)
+    let cartNum = this.data.cartNum + num
+    if (cartNum <= 1) {
+      cartNum = 1
+    }
+    this.setData({
+      cartNum: cartNum
+    })
+  },
+  addCart() {
+    let cartData = wx.getStorageSync('cart') || []
+    let goodsInfo = this.data.goodsInfo
+    let basic_info = goodsInfo.basic_info
+    let cartNum = this.data.cartNum
+    let basic = {
+      basic_id: basic_info.id,
+      basic_name: basic_info.shop_name,
+      selected: true,
+      goods: []
+    }
+    let good = {
+      goods_id: goodsInfo.goods_id,
+      goods_name: goodsInfo.goods_name,
+      goods_price: goodsInfo.shop_price,
+      selected: true,
+      img: goodsInfo.gallery_list[0].img_url,
+      goods_num: cartNum
+    }
+    if (cartData.length == 0) {
+      basic.goods.push(good)
+      cartData.unshift(basic)
+    } else {
+      var index = cartData.map((item, index) => {
+        if (item.basic_id == basic_info.id) {
+          return index
+        }
+      })
+      if (index[0] != undefined) {
+        let basicIndex = index[0]
+        let indexArr = cartData[basicIndex].goods.map((item, index) => {
+          if (item.goods_id == good.goods_id) {
+            return index
+          }
+        })
+        if (indexArr[0] != undefined) {
+          let goodIndex = indexArr[0]
+          cartData[basicIndex].goods[goodIndex].goods_num += cartNum
+        } else {
+          cartData[basicIndex].goods.push(good)
+        }
+      } else {
+        basic.goods.push(good)
+        cartData.unshift(basic)
+      }
+    }
+    wx.setStorageSync('cart', cartData)
+    let totalNum = wx.getStorageSync('totalNum') + 1
+    wx.setStorageSync('totalNum', totalNum)
+    wx.showToast({
+      title: '加入购物车',
+      icon: 'success',
+      duration: 2000
+    })
+    this.setData({
+      totalNum: totalNum
+    })
+  },
+  showCart() {
+    this.setData({
+      showMask: true,
+      showCart: true
+    })
+  },
+  closeMask() {
+    this.setData({
+      showMask: false,
+      showCart: false
+    })
+  },
   toGoodsDetail(e) {
     let gid = e.currentTarget.dataset.gid
     wx.navigateTo({
       url: '/pages/goodsDetail/goodsDetail?goods_id=' + gid,
+    })
+  },
+  toCart() {
+    wx.switchTab({
+      url: '/pages/cart/cart',
     })
   },
   async getGoodsInfo(goods_id = 1153) {
@@ -141,7 +230,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      totalNum: wx.getStorageSync('totalNum')
+    })
   },
 
   /**

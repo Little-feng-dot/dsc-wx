@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/cart/cart",
+    "pages/goodsDetail/goodsDetail",
     "pages/home/home",
     "pages/comment/comment",
-    "pages/goodsDetail/goodsDetail",
     "pages/creagory/creagory",
     "pages/goodslist/goodslist",
     "pages/discover/discover",
-    "pages/cart/cart",
     "pages/mine/mine",
     "pages/index/index",
     "pages/logs/logs"

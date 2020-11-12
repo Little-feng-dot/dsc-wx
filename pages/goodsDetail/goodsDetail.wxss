@@ -473,3 +473,137 @@
   height: 100rpx;
   font-size: 32rpx;
 }
+
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 9999;
+}
+
+.littleCart {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 99999;
+  background-color: #fff;
+}
+
+.littleCart .goodsinfo-warp {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.littleCart .goodsinfo-warp image {
+  /* position: relative;
+  top: -60rpx;
+  left: 0;
+  z-index: 1000000; */
+  transform: translateY(-60rpx);
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10px #000;
+}
+
+
+.littleCart .goodsinfo-warp .goodsinfo {
+  width: 70%;
+  margin: 20rpx 0 0 20rpx;
+}
+
+.littleCart .goodsinfo-warp .goodsinfo .title {
+  width: 100%;
+  line-height: 40rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 28rpx;
+}
+
+.littleCart .goodsinfo-warp .goodsinfo .price {
+  color: #f00;
+  font-weight: bold;
+  margin: 8rpx 0;
+}
+
+.littleCart .goodsinfo-warp .goodsinfo .inventory {
+  font-size: 28rpx;
+  color: #888;
+  font-weight: 400;
+}
+
+.littleCart .num-warp {
+  width: 100%;
+  margin: 20rpx 0;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.littleCart .num-warp .num-title {
+  flex: 2;
+  margin-left: 20rpx;
+  color: #888;
+}
+
+.littleCart .num-warp .num-right {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+  border: 1px solid #efefef;
+}
+
+.littleCart .num-warp .num-right view {
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #f1f1f1;
+  line-height: 60rpx;
+  text-align: center;
+}
+.littleCart .num-warp .num-right .num{
+  background-color: #fff;
+}
+
+.littleCart .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.littleCart .bottom .addCart {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #f44;
+}
+
+.littleCart .bottom .goPay {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #FE9315;
+}

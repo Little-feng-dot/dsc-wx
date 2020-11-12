@@ -42,9 +42,9 @@
 			<view class="text">正品保证 七天无理由退换 闪速配送</view>
 		</view>
 		<br brStyle="{{brStyle}}" />
-		<view class="serve">
+		<view class="serve" bindtap="showCart">
 			<view class="title">已选:</view>
-			<view class="text">1个</view>
+			<view class="text">{{cartNum}}个</view>
 			<view class="iconfont icon-youjiantou1"></view>
 		</view>
 		<br brStyle="{{brStyle}}" />
@@ -161,11 +161,37 @@
 		<view class="iconfont icon-shoucang1" wx:else></view>
 		<view>收藏</view>
 	</view>
-	<view class="cart">
+	<view class="cart" bindtap="toCart">
 		<view class="iconfont icon-gouwuchekong"></view>
 		<view>购物车</view>
-		<view class="cartNum">100</view>
+		<view class="cartNum">{{totalNum}}</view>
 	</view>
-	<view class="addCart">加入购物车</view>
+	<view class="addCart" bindtap="addCart">加入购物车</view>
 	<view class="goPay">立即购买</view>
+</view>
+
+
+
+<view class="mask" wx:if="{{showMask}}" bindtap="closeMask"></view>
+<view class="littleCart" wx:if="{{showCart}}">
+	<view class="goodsinfo-warp">
+		<image src="{{goodsInfo.gallery_list[0].img_url}}"></image>
+		<view class="goodsinfo">
+			<view class="title">{{goodsInfo.goods_name}}</view>
+			<view class="price">{{goodsInfo.shop_price}}</view>
+			<view class="inventory">库存:{{goodsInfo.goods_number}}</view>
+		</view>
+	</view>
+	<view class="num-warp">
+		<view class="num-title">数量</view>
+		<view class="num-right">
+			<view class="subNum" bindtap="changeCartNum" data-cartNum="-1">-</view>
+			<view class="num">{{cartNum}}</view>
+			<view class="addNum" bindtap="changeCartNum" data-cartNum="1">+</view>
+		</view>
+	</view>
+	<view class="bottom">
+		<view class="addCart" bindtap="addCart">加入购物车</view>
+		<view class="goPay">立即购买</view>
+	</view>
 </view>

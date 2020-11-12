@@ -1,2 +1,82 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view class="noCart" wx:if="{{noCart}}">
+	<image src="https://x.dscmall.cn/static/dist/img/cart-empty.png"></image>
+	<view class="title">您的购物车还是空空的,快去逛逛吧!</view>
+	<view class="other">
+		<view class="looklook">去逛逛</view>
+		<view class="lookAttention">看看关注</view>
+	</view>
+</view>
+
+<view wx:else>
+	<view class="header">
+		<view class="iconfont icon-location"> 河南省 郑州市 中原区</view>
+		<view class="operation">编辑</view>
+	</view>
+
+	<view class="store-warp" wx:for="{{cartData}}" wx:key="index" wx:for-item="store">
+		<view class="store">
+			<view class="checked" bindtap="checkStore" data-index="{{index}}">
+				<view class="iconfont icon-danxuanxuanzhong" wx:if="{{store.selected}}"></view>
+				<view class="iconfont icon-danxuan-moren" wx:else></view>
+			</view>
+			<view class="store_name">{{store.basic_name}}</view>
+			<view class="iconfont icon-youjiantou1"></view>
+		</view>
+		<view class="goods-warp" wx:for="{{store.goods}}" wx:key="index">
+			<movable-area style="width:{{(winW-100)*2}}rpx">
+				<movable-view style="width:{{winW}}px" x="{{(index==touchindex&&store.basic_id==touchid)?x:0}}" data-index="{{index}}" data-store="{{store.basic_id}}" direction="horizontal" bindtouchstart="startFn" bindtouchend="endFn">
+					<view class="movable">
+						<view class="checked" bindtap="checkGood" data-index="{{index}}" data-store="{{store.basic_id}}">
+							<view class="iconfont icon-danxuanxuanzhong" wx:if="{{item.selected}}"></view>
+							<view class="iconfont icon-danxuan-moren" wx:else></view>
+						</view>
+						<view class="goodsItem" data-gid="{{item.goods_id}}" bindtap="toGoodsDetail">
+							<image src="{{item.img}}"></image>
+							<view class="goodinfo">
+								<view class="title">{{item.goods_name}}</view>
+								<view class="other">
+									<view class="price">{{item.goods_price}}</view>
+									<view class="goodNum">
+										<view class="subNum" catchtap="changeCartNum" data-cartnum="-1" data-index="{{index}}" data-store="{{store.basic_id}}">-</view>
+										<view class="num">{{item.goods_num}}</view>
+										<view class="addNum" catchtap="changeCartNum" data-cartnum="1" data-index="{{index}}" data-store="{{store.basic_id}}">+</view>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</movable-view>
+			</movable-area>
+			<view class="dele" bindtap="dele" data-index="{{index}}" data-store="{{store.basic_id}}">删除</view>
+		</view>
+	</view>
+</view>
+
+<view class="goods-guess">
+	<view class="header">
+		<view class="line"></view>
+		<view class="title">猜你喜欢</view>
+		<view class="line"></view>
+	</view>
+	<view class="goodsList">
+		<view class="goodsList-item" wx:for="{{goodsGuessData}}" wx:key="index" bindtap="toGoodsDetail" data-gid="{{item.goods_id}}">
+			<image src="{{item.goods_thumb}}"></image>
+			<view class="title">{{item.goods_name}}</view>
+			<view class="price">{{item.shop_price}}</view>
+		</view>
+	</view>
+</view>
+<view class="noMore" wx:if="{{noMore}}">我也是有底线的~</view>
+
+<view class="footer" wx:if="{{!noCart}}">
+	<view class="checked" bindtap="checkedAll">
+		<view class="iconfont icon-danxuanxuanzhong" wx:if="{{checkedAll}}" style="font-size:40rpx;color:#f00"></view>
+		<view class="iconfont icon-danxuan-moren" wx:else style="font-size:40rpx"></view>
+		<view class="text">全选</view>
+	</view>
+	<view class="priceInfo">
+		<view class="totalPrice">合计:<text>￥{{total.totalPrice}}</text></view>
+		<view class="yf">(不含运费,已节省￥0.00)</view>
+	</view>
+	<view class="toPay">去结算({{total.totalNum}})</view>
+</view>
